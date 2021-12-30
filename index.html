@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+
+  <body>
+    <div id="app">
+      <p>
+        <input type="text" v-bind:value="message" />
+      </p>
+      <p v-if="toggle" >
+        Hello
+      </p>
+      <ol>
+        <li v-for="color in colors">{{ color[0] }}</li>
+      </ol>
+      <ul>
+        <li v-for="value in user">
+          {{ value }}
+        </li>
+      </ul>
+      <ul>
+        <li v-for="(value, ley) in user">
+          {{ key }}: {{ value }}
+        </li>
+      </ul>
+      <button v-on:click="onClick">Click!</button>
+      <p>{{ now }}</p>
+      <p><input type="text" v-model="message"></p>
+      <p><input type="text" v-model="message"></p>
+      <pre>{{ $data }}</pre>
+      <p><hello-component></hello-component></p>
+      <!-- <hello-component></hello-component>
+      <hello-component></hello-component> -->
+      <p v-if="template === 'cat'">
+        正解
+      </p>
+      <p v-else>
+        不正解
+      </p>
+    </div>
+    <script src="https://unpkg.com/vue@3.1.5"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
